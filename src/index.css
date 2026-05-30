@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap");
+@import "tailwindcss";
+
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-background: var(--color-background);
+  --color-nav: var(--color-nav);
+  --background-image-noisy: var(--noisy);
+  --background-image-rings: var(--rings);
+}
+
+:root {
+  --color-primary: hsl(0, 0%, 8%);
+  --color-secondary: hsl(0, 0%, 14%);
+  --color-accent: hsl(41.7, 100%, 48.8%);
+  --color-background: hsl(0, 0%, 100%);
+  --color-nav: rgba(255,255,255,0.3);
+  --noisy: url("/images/noise-light.png");
+  --rings: url("/images/pattern-rings-light.svg");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: hsl(0, 0%, 100%);
+    --color-secondary: hsl(0, 0%, 85%);
+    --color-accent: hsl(41.7, 100%, 48.8%);
+    --color-background: hsl(0, 0%, 8%);
+    --color-nav: rgba(0,0,0,0.3);
+    --noisy: url("/images/noise.png");
+    --rings: url("/images/pattern-rings.svg");
+  }
+}
+
+html,
+body {
+  font-family: "Space Grotesk", sans-serif;
+  transition: 0.3s ease;
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+}
+
+* {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+nav {
+  --nav-blur: 0px;
+  backdrop-filter: blur(var(--nav-blur));
+  -webkit-backdrop-filter: blur(var(--nav-blur));
+}
+
+
+button, a {
+  cursor: pointer;
+
+}
+
+#telegram-btn img:hover {
+  filter: invert(64%) sepia(92%) saturate(1010%) hue-rotate(1deg) brightness(98%) contrast(101%);
+  transition: 0.3s ease;
+}
+
+#x-btn img:hover {
+  filter: invert(64%) sepia(92%) saturate(1010%) hue-rotate(1deg) brightness(100%) contrast(101%);
+  transition: 0.3s ease;
+}
